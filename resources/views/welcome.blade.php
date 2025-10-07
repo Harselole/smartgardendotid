@@ -77,7 +77,7 @@
       <div class="bb ze ki xn wq">
         <div class="tc wf gg qq">
           <!-- About Images -->
-          <div class="animate_left xc gn gg jn/2 i">
+          <div class="animate_left xc gn gg jn/2 i rounded-2xl shadow-2xl">
             <iframe width="625" height="350"
               src="https://www.youtube.com/embed/RAEwTFN3h8M?si=9LUGLKx8lJZtfcbI"
               title="YouTube video player"

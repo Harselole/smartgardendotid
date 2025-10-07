@@ -8,6 +8,7 @@
   <title>SmartGarden.ID</title>
   <link rel="icon" href="images/logo-sg.png" type="image/png" />
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -21,7 +22,7 @@
     @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false">
     <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
       <div class="vd to/4 tc wf yf">
-        <a href="index.html">
+        <a href="/">
           <img class="om" src="images/logo-sg-long.png" style="width: 250px" alt="Logo Light" />
         </a>
 
@@ -44,8 +45,8 @@
 
       <div class="vd wo/4 sd qo f ho oo wf yf" :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }">
         <nav>
-          <ul class="tc _o sf yo cg ep">
-            <li><a href="index.html" class="xl" :class="{ 'mk': page === 'beranda' }">Beranda</a></li>
+          <ul class="tc _o sf yo cg ep text-black">
+            <li><a href="/" class="xl" :class="{ 'mk': page === 'beranda' }">Beranda</a></li>
             <li class="c i" x-data="{ dropdown: false }">
               <a href="#!" class="xl tc wf yf bg" @click.prevent="dropdown = !dropdown"
                 :class="{ 'mk': page === 'agro' || page === 'sensor' || page === 'ai' || page === 'labs'}">
@@ -66,8 +67,8 @@
               </ul>
               <!-- Dropdown End -->
             </li>
-            <li><a href="index.html#features" class="xl">Tentang Kami</a></li>
-            <li><a href="index.html#features" class="xl">Karir</a></li>
+            <li><a href="/about" class="xl">Tentang Kami</a></li>
+            <li><a href="/career" class="xl">Karir</a></li>
             <li><a href="index.html#support" class="xl">Berita & Artikel</a></li>
           </ul>
         </nav>
