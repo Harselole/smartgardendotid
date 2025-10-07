@@ -99,107 +99,184 @@
     </section>
     <!-- ===== About End ===== -->
 
-    <!-- ===== Blog Start ===== -->
-    <section class="ji gp uq">
-      <!-- Section Title Start -->
-      <div
-        x-data="{ sectionTitle: `Berita & Artikel Terbaru`, sectionTitleText: ``}">
-        <div class="animate_top bb ze rj ki xn vq">
-          <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b">
-          </h2>
-          <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+  <!-- ===== Blog Start ===== -->
+<section class="ji gp uq">
+
+  <!-- ===== Title Area (terpisah) ===== -->
+  <div x-data="{ sectionTitle: `Berita & Artikel Terbaru`, sectionTitleText: `Informasi seputar pertanian dan perkebunan` }">
+    <div class="animate_top bb ze rj ki xn vq text-center">
+      <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
+      <p x-text="sectionTitleText" class="bb on/5 wo/5 hq mt-2"></p>
+    </div>
+  </div>
+
+  <!-- ===== Carousel Area ===== -->
+  <div class="mt-10 relative">
+    <div class="swiper mySwiper px-6">
+      <div class="swiper-wrapper">
+
+        <!-- Contoh Slide -->
+        <div class="swiper-slide">
+          <a href="detail-berita.html" class="block group">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+              <img src="https://picsum.photos/id/1011/400/250" alt="Gambar 1" class="w-full h-48 object-cover">
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
+                  Mengenal Asem-Aseman pada Padi dan Cara Mengatasinya
+                </h3>
+                <p class="text-sm text-gray-500 mt-2">Masalah umum dalam tanaman padi yang bisa dihindari...</p>
+                <span class="mt-4 inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600">
+                  Read More →
+                </span>
+              </div>
+            </div>
+          </a>
         </div>
 
-
-      </div>
-      <!-- Section Title End -->
-
-      <div class="bb ye ki xn vq jb jo">
-        <div class="wc qf pn xo zf iq">
-          <!-- Blog Item -->
-          <div class="animate_top sg vk rm xm">
-            <div class="c rc i z-1 pg">
-              <img class="w-full" src="images/blog-01.png" alt="Blog" />
-
-              <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+        <div class="swiper-slide">
+          <a href="detail-berita.html" class="block group">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+              <img src="https://picsum.photos/id/1012/400/250" alt="Gambar 2" class="w-full h-48 object-cover">
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
+                  Maksimalkan Hasil! 5 Faktor Penting Produksi Kelapa Sawit
+                </h3>
+                <p class="text-sm text-gray-500 mt-2">Tingkatkan produktivitas dengan langkah sederhana...</p>
+                <span class="mt-4 inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600">
+                  Read More →
+                </span>
               </div>
             </div>
-
-            <div class="yh">
-              <div class="tc uf wf ag jq">
-                <div class="tc wf ag">
-                  <img src="images/icon-man.svg" alt="User" />
-                  <p>Musharof Chy</p>
-                </div>
-                <div class="tc wf ag">
-                  <img src="images/icon-calender.svg" alt="Calender" />
-                  <p>25 Dec, 2025</p>
-                </div>
-              </div>
-              <h4 class="ek tj ml il kk wm xl eq lb">
-                <a href="blog-single.html">Free advertising for your online business</a>
-              </h4>
-            </div>
-          </div>
-
-          <!-- Blog Item -->
-          <div class="animate_top sg vk rm xm">
-            <div class="c rc i z-1 pg">
-              <img class="w-full" src="images/blog-02.png" alt="Blog" />
-
-              <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
-              </div>
-            </div>
-
-            <div class="yh">
-              <div class="tc uf wf ag jq">
-                <div class="tc wf ag">
-                  <img src="images/icon-man.svg" alt="User" />
-                  <p>Musharof Chy</p>
-                </div>
-                <div class="tc wf ag">
-                  <img src="images/icon-calender.svg" alt="Calender" />
-                  <p>25 Dec, 2025</p>
-                </div>
-              </div>
-              <h4 class="ek tj ml il kk wm xl eq lb">
-                <a href="blog-single.html">9 simple ways to improve your design skills</a>
-              </h4>
-            </div>
-          </div>
-
-          <!-- Blog Item -->
-          <div class="animate_top sg vk rm xm">
-            <div class="c rc i z-1 pg">
-              <img class="w-full" src="images/blog-03.png" alt="Blog" />
-
-              <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
-              </div>
-            </div>
-
-            <div class="yh">
-              <div class="tc uf wf ag jq">
-                <div class="tc wf ag">
-                  <img src="images/icon-man.svg" alt="User" />
-                  <p>Musharof Chy</p>
-                </div>
-                <div class="tc wf ag">
-                  <img src="images/icon-calender.svg" alt="Calender" />
-                  <p>25 Dec, 2025</p>
-                </div>
-              </div>
-              <h4 class="ek tj ml il kk wm xl eq lb">
-                <a href="blog-single.html">Tips to quickly improve your coding speed.</a>
-              </h4>
-            </div>
-          </div>
+          </a>
         </div>
+
+        <div class="swiper-slide">
+          <a href="detail-berita.html" class="block group">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+              <img src="https://picsum.photos/id/1013/400/250" alt="Gambar 3" class="w-full h-48 object-cover">
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
+                  Kelapa Sawit: Tanaman Tanpa Limbah
+                </h3>
+                <p class="text-sm text-gray-500 mt-2">Setiap bagian dari kelapa sawit dapat dimanfaatkan...</p>
+                <span class="mt-4 inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600">
+                  Read More →
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="swiper-slide">
+          <a href="detail-berita.html" class="block group">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+              <img src="https://picsum.photos/id/1014/400/250" alt="Gambar 4" class="w-full h-48 object-cover">
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
+                  Tips Merawat Tanaman di Musim Hujan
+                </h3>
+                <p class="text-sm text-gray-500 mt-2">Cara mencegah tanaman busuk dan berjamur...</p>
+                <span class="mt-4 inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600">
+                  Read More →
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="swiper-slide">
+          <a href="detail-berita.html" class="block group">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+              <img src="https://picsum.photos/id/1015/400/250" alt="Gambar 5" class="w-full h-48 object-cover">
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
+                  Pertanian Organik, Solusi Masa Depan
+                </h3>
+                <p class="text-sm text-gray-500 mt-2">Kenali keuntungan sistem pertanian tanpa bahan kimia...</p>
+                <span class="mt-4 inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600">
+                  Read More →
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="swiper-slide">
+          <a href="detail-berita.html" class="block group">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+              <img src="https://picsum.photos/id/1016/400/250" alt="Gambar 6" class="w-full h-48 object-cover">
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
+                  Efisiensi Air untuk Pertanian Modern
+                </h3>
+                <p class="text-sm text-gray-500 mt-2">Teknologi baru dalam irigasi hemat air...</p>
+                <span class="mt-4 inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600">
+                  Read More →
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
       </div>
-    </section>
-    <!-- ===== Blog End ===== -->
+
+      <!-- Tombol Navigasi -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper CSS & JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 24,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      1024: { slidesPerView: 3 },
+      768: { slidesPerView: 2 },
+      480: { slidesPerView: 1 },
+    },
+  });
+</script>
+
+<style>
+  .mySwiper {
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .swiper-slide {
+    height: auto !important;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #16a34a;
+    background: white;
+    border-radius: 9999px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    width: 40px;
+    height: 40px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 16px;
+    font-weight: bold;
+  }
+</style>
+
+
 
     
   </main>
