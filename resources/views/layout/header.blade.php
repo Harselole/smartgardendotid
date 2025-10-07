@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SmartGarden.ID</title>
   <link rel="icon" href="images/logo-sg.png" type="image/png" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -65,6 +66,7 @@
               </ul>
               <!-- Dropdown End -->
             </li>
+            <li><a href="index.html#features" class="xl">Tentang Kami</a></li>
             <li><a href="index.html#features" class="xl">Karir</a></li>
             <li><a href="index.html#support" class="xl">Berita & Artikel</a></li>
           </ul>
