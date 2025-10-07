@@ -1,5 +1,5 @@
 <!-- ===== Footer Start ===== -->
-  <footer>
+  <footer class="bg-gray-100">
     <div class="bb ze ki xn 2xl:ud-px-0">
       <!-- Footer Top -->
       <div class="ji gp">
