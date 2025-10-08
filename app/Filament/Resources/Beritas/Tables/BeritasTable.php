@@ -33,6 +33,9 @@ class BeritasTable
                     ->sortable()
                     ->onIcon('heroicon-o-eye')
                     ->offIcon('heroicon-o-eye-slash'),
+                TextColumn::make('created_by')
+                    ->label('Dibuat Oleh')
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

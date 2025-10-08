@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->string('gambar2')->nullable();
             $table->string('gambar3')->nullable();
             $table->boolean('is_tampil')->default(0); // ⬅️ default 0
+            $table->string('created_by')->nullable();
             $table->timestamps();
         });
     }
