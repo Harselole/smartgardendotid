@@ -23,10 +23,13 @@ class BeritasTable
                 TextColumn::make('kota')
                     ->searchable(),
                 TextColumn::make('gambar1')
+                    ->label('Gambar 1')
                     ->searchable(),
                 TextColumn::make('gambar2')
+                    ->label('Gambar 2')
                     ->searchable(),
                 TextColumn::make('gambar3')
+                    ->label('Gambar 3')
                     ->searchable(),
                 ToggleColumn::make('is_tampil')
                     ->label('Tampilkan?')
