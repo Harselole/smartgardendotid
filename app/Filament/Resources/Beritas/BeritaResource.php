@@ -18,9 +18,18 @@ class BeritaResource extends Resource
 {
     protected static ?string $model = Berita::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedNewspaper;
 
     protected static ?string $recordTitleAttribute = 'berita';
+    public static function getPluralLabel(): ?string
+    {
+        return 'Berita';
+    }
+
+    public static function getLabel(): ?string
+    {
+        return 'Berita';
+    }
 
     public static function form(Schema $schema): Schema
     {

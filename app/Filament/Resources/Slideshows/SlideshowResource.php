@@ -22,6 +22,16 @@ class SlideshowResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'slideshow';
 
+    public static function getPluralLabel(): ?string
+    {
+        return 'Slideshow';
+    }
+
+    public static function getLabel(): ?string
+    {
+        return 'Slideshow';
+    }
+
     public static function form(Schema $schema): Schema
     {
         return SlideshowForm::configure($schema);
