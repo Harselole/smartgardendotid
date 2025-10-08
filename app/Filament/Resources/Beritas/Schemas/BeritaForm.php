@@ -19,9 +19,9 @@ class BeritaForm
                     ->live(onBlur: true)
                     ->afterStateUpdated(function ($state, callable $set) {
                         $words = explode(' ', $state);
-                        $limited = implode(' ', array_slice($words, 0, 10));
+                        $limited = implode(' ', array_slice($words, 0, 8));
                         $set('slug', Str::slug($limited));
-                    }),
+                    }), 
 
                 Forms\Components\TextInput::make('slug')
                     ->label('Slug')

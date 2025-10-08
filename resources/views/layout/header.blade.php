@@ -8,8 +8,14 @@
   <title>SmartGarden.ID</title>
   <link rel="icon" href="images/logo-sg.png" type="image/png" />
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <!-- SwiperJS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> 
   <script src="https://cdn.tailwindcss.com"></script>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+  <!-- Di layout.header atau sebelum </head> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
@@ -69,7 +75,7 @@
             </li>
             <li><a href="/about" class="xl">Tentang Kami</a></li>
             <li><a href="/career" class="xl">Karir</a></li>
-            <li><a href="index.html#support" class="xl">Berita & Artikel</a></li>
+            <li><a href="/news" class="xl">Berita & Artikel</a></li>
           </ul>
         </nav>
 

@@ -32,6 +32,20 @@ class SlideshowResource extends Resource
         return SlideshowsTable::configure($table);
     }
 
+    public static function updateOrder($recordId, $direction)
+{
+    $model = static::getModel()::find($recordId);
+
+    if (! $model) return;
+
+    if ($direction === 'up') {
+        $model->increment('urutan');
+    } elseif ($direction === 'down' && $model->urutan > 0) {
+        $model->decrement('urutan');
+    }
+}
+
+
     public static function getRelations(): array
     {
         return [

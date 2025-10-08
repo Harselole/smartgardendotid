@@ -17,6 +17,11 @@ class SlideshowForm
                     ->directory('slideshow')
                     ->required(),
 
+                Forms\Components\TextInput::make('urutan')
+                    ->label('Urutan Tampil')
+                    ->numeric()
+                    ->default(0),
+
                 // Forms\Components\Toggle::make('is_tampil')
                 //     ->label('Tampilkan di Halaman Utama?')
                 //     ->onColor('success')
