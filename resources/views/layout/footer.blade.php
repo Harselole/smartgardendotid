@@ -51,7 +51,6 @@
 
               <ul>
                 <li><a href="/" class="sc xl vb">Beranda</a></li>
-                <li><a href="#!" class="sc xl vb">Produk</a></li>
                 <li><a href="/about" class="sc xl vb">Tentang Kami</a></li>
                 <li><a href="/career" class="sc xl vb">Karir</a></li>
                 <li><a href="/news" class="sc xl vb">Berita & Artikel</a></li>
@@ -61,10 +60,10 @@
             <div class="animate_top">
               <h4 class="kk wm tj ec">Produk</h4>
               <ul>
-                <li><a href="#!" class="sc xl vb">SmartGarden Agro</a></li>
-                <li><a href="#!" class="sc xl vb">SmartGarden Sensor</a></li>
-                <li><a href="#!" class="sc xl vb">SmartGarden AI</a></li>
-                <li><a href="#!" class="sc xl vb">SmartGarden Labs</a></li>
+                <li><a href="/agro" class="sc xl vb">SmartGarden Agro</a></li>
+                <li><a href="/sensor" class="sc xl vb">SmartGarden Sensor</a></li>
+                <li><a href="/ai" class="sc xl vb">SmartGarden AI</a></li>
+                <li><a href="/labs" class="sc xl vb">SmartGarden Labs</a></li>
               </ul>
             </div>
             <div class="animate_top">

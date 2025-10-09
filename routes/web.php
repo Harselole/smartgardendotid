@@ -16,6 +16,22 @@ Route::get('/career', function () {
     return view('career');
 });
 
+Route::get('/agro', function () {
+    return view('product_agro');
+});
+
+Route::get('/sensor', function () {
+    return view('product_sensor');
+});
+
+Route::get('/ai', function () {
+    return view('product_ai');
+});
+
+Route::get('/labs', function () {
+    return view('product_labs');
+});
+
 // Route untuk homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

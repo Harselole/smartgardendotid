@@ -69,13 +69,13 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                             </a>
                             <!-- Dropdown Start -->
                             <ul class="a" :class="{ 'tc': dropdown }">
-                                <li><a href="agro.html" class="xl"
+                                <li><a href="/agro" class="xl"
                                         :class="{ 'mk': page === 'agro' }">SmartGarden Agro</a></li>
-                                <li><a href="sensor.html" class="xl"
+                                <li><a href="/sensor" class="xl"
                                         :class="{ 'mk': page === 'sensor' }">SmartGarden Sensor</a></li>
-                                <li><a href="ai.html" class="xl" :class="{ 'mk': page === 'ai' }">SmartGarden
+                                <li><a href="/ai" class="xl" :class="{ 'mk': page === 'ai' }">SmartGarden
                                         AI</a></li>
-                                <li><a href="labs.html" class="xl"
+                                <li><a href="/labs" class="xl"
                                         :class="{ 'mk': page === 'labs' }">SmartGarden Labs</a></li>
                             </ul>
                             <!-- Dropdown End -->
