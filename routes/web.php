@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +15,9 @@ Route::get('/about', function () {
 Route::get('/career', function () {
     return view('career');
 });
+
+// Route untuk homepage
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Routes untuk Berita - URUTAN PENTING!
 Route::get('/news', [BeritaController::class, 'index'])->name('news.index');

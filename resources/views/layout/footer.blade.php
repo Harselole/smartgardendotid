@@ -5,8 +5,8 @@
       <div class="ji gp">
         <div class="tc uf ap gg fp">
           <div class="animate_top zd/2 to/4">
-            <a href="index.html">
-              <img src="images/logo-sg-long.png" alt="Logo" class="om" />
+            <a href="/">
+              <img src="{{ asset('images/logo-sg-long.png') }}" alt="Logo" class="om" />
             </a>
 
             <p>Jl. Nakula Raya</p>
@@ -17,28 +17,28 @@
               <li>
                 <a href="#!">
                   <img class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    src="images/facebook.png" xmlns="http://www.w3.org/2000/svg">
+                    src="{{ asset('images/facebook.png') }}" xmlns="http://www.w3.org/2000/svg">
                   </img>
                 </a>
               </li>
               <li>
                 <a href="#!">
                   <img class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    src="images/instagram.png" xmlns="http://www.w3.org/2000/svg">
+                    src="{{ asset('images/instagram.png') }}" xmlns="http://www.w3.org/2000/svg">
                   </img>
                 </a>
               </li>
               <li>
                 <a href="#!">
                   <img class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    src="images/youtube.png" xmlns="http://www.w3.org/2000/svg">
+                    src="{{ asset('images/youtube.png') }}" xmlns="http://www.w3.org/2000/svg">
                   </img>
                 </a>
               </li>
               <li>
                 <a href="#!">
                   <img class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24"
-                    src="images/linkedin.png" xmlns="http://www.w3.org/2000/svg">
+                    src="{{ asset('images/linkedin.png') }}" xmlns="http://www.w3.org/2000/svg">
                   </img>
                 </a>
               </li>
@@ -50,11 +50,11 @@
               <h4 class="kk wm tj ec">Menu</h4>
 
               <ul>
-                <li><a href="#!" class="sc xl vb">Beranda</a></li>
+                <li><a href="/" class="sc xl vb">Beranda</a></li>
                 <li><a href="#!" class="sc xl vb">Produk</a></li>
-                <li><a href="#!" class="sc xl vb">Tentang Kami</a></li>
-                <li><a href="#!" class="sc xl vb">Karir</a></li>
-                <li><a href="#!" class="sc xl vb">Berita & Artikel</a></li>
+                <li><a href="/about" class="sc xl vb">Tentang Kami</a></li>
+                <li><a href="/career" class="sc xl vb">Karir</a></li>
+                <li><a href="/news" class="sc xl vb">Berita & Artikel</a></li>
               </ul>
             </div>
 
@@ -137,7 +137,7 @@
       };
     };
   </script>
-  <script defer src="bundle.js"></script>
+  <script defer src="{{ asset('bundle.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- SwiperJS JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

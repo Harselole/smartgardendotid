@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SmartGarden.ID</title>
-    <link rel="icon" href="images/logo-sg.png" type="image/png" />
+    <link rel="icon" href="{{ asset('images/logo-sg.png') }}" type="image/png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- SwiperJS CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -26,7 +26,7 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
         <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
             <div class="vd to/4 tc wf yf">
                 <a href="/">
-                    <img class="om" src="images/logo-sg-long.png" style="width: 250px" alt="Logo Light" />
+                    <img class="om" src="{{ asset('images/logo-sg-long.png') }}" style="width: 250px" alt="Logo Light" />
                 </a>
 
                 <!-- Hamburger Toggle BTN -->
@@ -92,28 +92,28 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
               <li>
                 <a href="#!">
                   <img class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    src="images/facebook.png" xmlns="http://www.w3.org/2000/svg">
+                    src="{{ asset('images/facebook.png') }}" xmlns="http://www.w3.org/2000/svg">
                   </img>
                 </a>
               </li>
               <li>
                 <a href="#!">
                   <img class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    src="images/instagram.png" xmlns="http://www.w3.org/2000/svg">
+                    src="{{ asset('images/instagram.png') }}" xmlns="http://www.w3.org/2000/svg">
                   </img>
                 </a>
               </li>
               <li>
                 <a href="#!">
                   <img class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    src="images/youtube.png" xmlns="http://www.w3.org/2000/svg">
+                    src="{{ asset('images/youtube.png') }}" xmlns="http://www.w3.org/2000/svg">
                   </img>
                 </a>
               </li>
               <li>
                 <a href="#!">
                   <img class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24"
-                    src="images/linkedin.png" xmlns="http://www.w3.org/2000/svg">
+                    src="{{ asset('images/linkedin.png') }}" xmlns="http://www.w3.org/2000/svg">
                   </img>
                 </a>
               </li>

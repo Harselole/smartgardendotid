@@ -99,7 +99,7 @@
     </section>
     <!-- ===== About End ===== -->
 
-  <!-- ===== Blog Start ===== -->
+    <!-- ===== Blog Start ===== -->
 <section class="ji gp uq">
 
   <!-- ===== Title Area (terpisah) ===== -->
@@ -115,108 +115,73 @@
     <div class="swiper mySwiper px-6">
       <div class="swiper-wrapper">
 
-        <!-- Contoh Slide -->
+        @forelse($beritas as $berita)
+        <!-- Slide Berita Dinamis -->
         <div class="swiper-slide">
-          <a href="detail-berita.html" class="block group">
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
-              <img src="https://picsum.photos/id/1011/400/250" alt="Gambar 1" class="w-full h-48 object-cover">
-              <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
-                  Mengenal Asem-Aseman pada Padi dan Cara Mengatasinya
+          <a href="{{ route('news.show', $berita->slug) }}" class="block group h-full">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1 h-full flex flex-col">
+              <!-- Gambar dengan tinggi tetap -->
+              <div class="w-full h-48 overflow-hidden">
+                <img src="{{ $berita->gambar1_url }}" alt="{{ $berita->judul }}" class="w-full h-full object-cover">
+              </div>
+              
+              <!-- Content dengan tinggi tetap -->
+              <div class="p-5 flex flex-col flex-grow">
+                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300 line-clamp-2 min-h-[3.5rem]">
+                  {{ \Illuminate\Support\Str::words(strip_tags($berita->judul), 8, '...') }}
                 </h3>
-                <p class="text-sm text-gray-500 mt-2">Masalah umum dalam tanaman padi yang bisa dihindari...</p>
-                <span class="mt-4 inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600">
-                  Read More →
-                </span>
+                
+                <p class="text-sm text-gray-500 mt-2 line-clamp-3 flex-grow">
+                  {{ \Illuminate\Support\Str::words(strip_tags($berita->excerpt), 15, '...') }}
+                </p>
+                
+                <!-- Info tanggal dan kota -->
+                <div class="mt-3 flex items-center text-xs text-gray-400">
+                  <svg class="w-4 h-4 mr-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="truncate">{{ $berita->formatted_date }}</span>
+                  
+                  @if($berita->kota)
+                  <span class="mx-2">•</span>
+                  <svg class="w-4 h-4 mr-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="truncate">{{ $berita->kota }}</span>
+                  @endif
+                </div>
+                
+                <!-- Button dengan posisi tetap di bawah -->
+                <div class="mt-4 pt-3 border-t border-gray-100">
+                  <span class="inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600 w-full text-center">
+                    Baca Selengkapnya →
+                  </span>
+                </div>
               </div>
             </div>
           </a>
         </div>
-
+        @empty
+        <!-- Fallback jika tidak ada berita -->
         <div class="swiper-slide">
-          <a href="detail-berita.html" class="block group">
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
-              <img src="https://picsum.photos/id/1012/400/250" alt="Gambar 2" class="w-full h-48 object-cover">
-              <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
-                  Maksimalkan Hasil! 5 Faktor Penting Produksi Kelapa Sawit
-                </h3>
-                <p class="text-sm text-gray-500 mt-2">Tingkatkan produktivitas dengan langkah sederhana...</p>
-                <span class="mt-4 inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600">
-                  Read More →
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+            <div class="w-full h-48 overflow-hidden">
+              <img src="{{ asset('images/blog-default.png') }}" alt="Default Image" class="w-full h-full object-cover">
+            </div>
+            <div class="p-5 flex flex-col flex-grow">
+              <h3 class="text-lg font-semibold text-gray-800 line-clamp-2 min-h-[3.5rem]">
+                Belum Ada Berita
+              </h3>
+              <p class="text-sm text-gray-500 mt-2 flex-grow">Berita akan segera tersedia</p>
+              <div class="mt-4 pt-3 border-t border-gray-100">
+                <span class="inline-block bg-gray-400 text-white text-sm font-medium px-4 py-2 rounded-md w-full text-center">
+                  Tidak Tersedia
                 </span>
               </div>
             </div>
-          </a>
+          </div>
         </div>
-
-        <div class="swiper-slide">
-          <a href="detail-berita.html" class="block group">
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
-              <img src="https://picsum.photos/id/1013/400/250" alt="Gambar 3" class="w-full h-48 object-cover">
-              <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
-                  Kelapa Sawit: Tanaman Tanpa Limbah
-                </h3>
-                <p class="text-sm text-gray-500 mt-2">Setiap bagian dari kelapa sawit dapat dimanfaatkan...</p>
-                <span class="mt-4 inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600">
-                  Read More →
-                </span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="swiper-slide">
-          <a href="detail-berita.html" class="block group">
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
-              <img src="https://picsum.photos/id/1014/400/250" alt="Gambar 4" class="w-full h-48 object-cover">
-              <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
-                  Tips Merawat Tanaman di Musim Hujan
-                </h3>
-                <p class="text-sm text-gray-500 mt-2">Cara mencegah tanaman busuk dan berjamur...</p>
-                <span class="mt-4 inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600">
-                  Read More →
-                </span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="swiper-slide">
-          <a href="detail-berita.html" class="block group">
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
-              <img src="https://picsum.photos/id/1015/400/250" alt="Gambar 5" class="w-full h-48 object-cover">
-              <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
-                  Pertanian Organik, Solusi Masa Depan
-                </h3>
-                <p class="text-sm text-gray-500 mt-2">Kenali keuntungan sistem pertanian tanpa bahan kimia...</p>
-                <span class="mt-4 inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600">
-                  Read More →
-                </span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="swiper-slide">
-          <a href="detail-berita.html" class="block group">
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
-              <img src="https://picsum.photos/id/1016/400/250" alt="Gambar 6" class="w-full h-48 object-cover">
-              <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
-                  Efisiensi Air untuk Pertanian Modern
-                </h3>
-                <p class="text-sm text-gray-500 mt-2">Teknologi baru dalam irigasi hemat air...</p>
-                <span class="mt-4 inline-block bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 group-hover:bg-green-600">
-                  Read More →
-                </span>
-              </div>
-            </div>
-          </a>
-        </div>
+        @endforelse
 
       </div>
 
@@ -235,15 +200,28 @@
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 24,
-    loop: true,
+    loop: {{ $beritas->count() > 1 ? 'true' : 'false' }},
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
     breakpoints: {
-      1024: { slidesPerView: 3 },
-      768: { slidesPerView: 2 },
-      480: { slidesPerView: 1 },
+      1024: { 
+        slidesPerView: 3,
+        spaceBetween: 24
+      },
+      768: { 
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      480: { 
+        slidesPerView: 1,
+        spaceBetween: 16
+      },
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
     },
   });
 </script>
@@ -257,6 +235,11 @@
 
   .swiper-slide {
     height: auto !important;
+  }
+
+  .swiper-slide > a,
+  .swiper-slide > div {
+    height: 100%;
   }
 
   .swiper-button-next,
@@ -273,6 +256,26 @@
   .swiper-button-prev::after {
     font-size: 16px;
     font-weight: bold;
+  }
+
+  /* Untuk memastikan line clamp bekerja */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Pastikan semua card memiliki tinggi yang sama */
+  .swiper-wrapper {
+    align-items: stretch;
   }
 </style>
 
