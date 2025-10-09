@@ -51,7 +51,7 @@ class BeritaController extends Controller
             ->limit(3)
             ->get();
 
-        return view('blog-single', compact('berita', 'relatedBeritas'));
+        return view('news_detail', compact('berita', 'relatedBeritas'));
     }
 
     /**
