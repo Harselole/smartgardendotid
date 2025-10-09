@@ -12,10 +12,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // Ambil 6 berita terbaru untuk carousel
+        // Ambil 5 berita terbaru untuk carousel
         $beritas = Berita::tampil()
             ->orderBy('created_at', 'desc')
-            ->limit(6)
+            ->limit(5)
             ->get();
 
         return view('welcome', compact('beritas'));
