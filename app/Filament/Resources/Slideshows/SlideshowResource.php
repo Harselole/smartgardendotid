@@ -71,4 +71,24 @@ class SlideshowResource extends Resource
             'edit' => EditSlideshow::route('/{record}/edit'),
         ];
     }
+
+    public static function canAccess(): bool
+{
+    $user = auth()->user();
+
+    // Super Admin bisa akses semua
+    if ($user?->isSuperAdmin()) {
+        return true;
+    }
+
+    // Admin (role 2) hanya menu yang diizinkan
+    if ($user?->isAdmin()) {
+        return \App\Models\AdminPermission::where('menu_name', static::getSlug())
+            ->where('is_enabled', true)
+            ->exists();
+    }
+
+    // Role lain tidak bisa akses
+    return false;
+}
 }
