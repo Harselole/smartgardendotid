@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\AgroController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -46,6 +47,8 @@ Route::get('/slideshow/image/{filename}', [BeritaController::class, 'serveImage2
 
 // Route untuk detail berita - HARUS PALING AKHIR karena menggunakan wildcard {slug}
 Route::get('/news/{slug}', [BeritaController::class, 'show'])->name('news.show');
+
+Route::get('/agro', [AgroController::class, 'index'])->name('agro.index');
 
 // Route untuk testing (opsional, bisa dihapus di production)
 // Route::get('/newstest', function () {
