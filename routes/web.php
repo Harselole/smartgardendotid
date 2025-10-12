@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AgroController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BeritaController;
-use App\Http\Controllers\AgroController;
+use App\Http\Controllers\SmartgardenAiController;
+use App\Http\Controllers\SmartgardenLabController;
+use App\Http\Controllers\SmartgardenSensorController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -49,6 +52,9 @@ Route::get('/slideshow/image/{filename}', [BeritaController::class, 'serveImage2
 Route::get('/news/{slug}', [BeritaController::class, 'show'])->name('news.show');
 
 Route::get('/agro', [AgroController::class, 'index'])->name('agro.index');
+Route::get('/sensor', [SmartgardenSensorController::class, 'index'])->name('sensor.index');
+Route::get('/ai', [SmartgardenAiController::class, 'index'])->name('ai.index');
+Route::get('/labs', [SmartgardenLabController::class, 'index'])->name('labs.index');
 
 // Route untuk testing (opsional, bisa dihapus di production)
 // Route::get('/newstest', function () {
