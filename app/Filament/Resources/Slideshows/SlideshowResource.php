@@ -2,20 +2,22 @@
 
 namespace App\Filament\Resources\Slideshows;
 
-use App\Filament\Resources\Slideshows\Pages\CreateSlideshow;
+use BackedEnum;
+use App\Models\Slideshow;
+use Filament\Tables\Table;
+use Filament\Schemas\Schema;
+use Filament\Resources\Resource;
+use App\Traits\HasAdminPermission;
+use Filament\Support\Icons\Heroicon;
 use App\Filament\Resources\Slideshows\Pages\EditSlideshow;
 use App\Filament\Resources\Slideshows\Pages\ListSlideshows;
+use App\Filament\Resources\Slideshows\Pages\CreateSlideshow;
 use App\Filament\Resources\Slideshows\Schemas\SlideshowForm;
 use App\Filament\Resources\Slideshows\Tables\SlideshowsTable;
-use App\Models\Slideshow;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 
 class SlideshowResource extends Resource
 {
+    use HasAdminPermission;
     protected static ?string $model = Slideshow::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
@@ -71,24 +73,4 @@ class SlideshowResource extends Resource
             'edit' => EditSlideshow::route('/{record}/edit'),
         ];
     }
-
-    public static function canAccess(): bool
-{
-    $user = auth()->user();
-
-    // Super Admin bisa akses semua
-    if ($user?->isSuperAdmin()) {
-        return true;
-    }
-
-    // Admin (role 2) hanya menu yang diizinkan
-    if ($user?->isAdmin()) {
-        return \App\Models\AdminPermission::where('menu_name', static::getSlug())
-            ->where('is_enabled', true)
-            ->exists();
-    }
-
-    // Role lain tidak bisa akses
-    return false;
-}
 }

@@ -62,7 +62,6 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-                CheckAdminPermission::class,
             ])
             ->databaseNotifications();
     }

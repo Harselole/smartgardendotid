@@ -45,14 +45,11 @@ class UserResource extends Resource
         return true;
     }
 
-    // Admin (role 2) hanya menu yang diizinkan
+    // Admin cek permission berdasarkan nama class
     if ($user?->isAdmin()) {
-        return \App\Models\AdminPermission::where('menu_name', static::getSlug())
-            ->where('is_enabled', true)
-            ->exists();
+        $resourceName = class_basename(static::class); // Misal: UserResource
+        return $user->hasPermissionTo($resourceName);
     }
-
-    // Role lain tidak bisa akses
     return false;
 }
 

@@ -2,20 +2,22 @@
 
 namespace App\Filament\Resources\SmartgardenLabs;
 
-use App\Filament\Resources\SmartgardenLabs\Pages\CreateSmartgardenLab;
+use BackedEnum;
+use Filament\Tables\Table;
+use Filament\Schemas\Schema;
+use App\Models\SmartgardenLab;
+use Filament\Resources\Resource;
+use App\Traits\HasAdminPermission;
+use Filament\Support\Icons\Heroicon;
 use App\Filament\Resources\SmartgardenLabs\Pages\EditSmartgardenLab;
 use App\Filament\Resources\SmartgardenLabs\Pages\ListSmartgardenLabs;
+use App\Filament\Resources\SmartgardenLabs\Pages\CreateSmartgardenLab;
 use App\Filament\Resources\SmartgardenLabs\Schemas\SmartgardenLabForm;
 use App\Filament\Resources\SmartgardenLabs\Tables\SmartgardenLabsTable;
-use App\Models\SmartgardenLab;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 
 class SmartgardenLabResource extends Resource
 {
+    use HasAdminPermission;
     protected static ?string $model = SmartgardenLab::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

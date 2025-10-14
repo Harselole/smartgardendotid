@@ -2,20 +2,22 @@
 
 namespace App\Filament\Resources\SmartgardenSensors;
 
-use App\Filament\Resources\SmartgardenSensors\Pages\CreateSmartgardenSensor;
+use BackedEnum;
+use Filament\Tables\Table;
+use Filament\Schemas\Schema;
+use Filament\Resources\Resource;
+use App\Models\SmartgardenSensor;
+use App\Traits\HasAdminPermission;
+use Filament\Support\Icons\Heroicon;
 use App\Filament\Resources\SmartgardenSensors\Pages\EditSmartgardenSensor;
 use App\Filament\Resources\SmartgardenSensors\Pages\ListSmartgardenSensors;
+use App\Filament\Resources\SmartgardenSensors\Pages\CreateSmartgardenSensor;
 use App\Filament\Resources\SmartgardenSensors\Schemas\SmartgardenSensorForm;
 use App\Filament\Resources\SmartgardenSensors\Tables\SmartgardenSensorsTable;
-use App\Models\SmartgardenSensor;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 
 class SmartgardenSensorResource extends Resource
 {
+    use HasAdminPermission;
     protected static ?string $model = SmartgardenSensor::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
