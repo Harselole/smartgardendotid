@@ -102,7 +102,7 @@
           <div class="order-1 lg:order-2">
             <div class="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="images/foto_1.png" 
+                src="images/foto_4.png" 
                 alt="SmartGarden Vision Mission" 
                 class="w-full h-full object-cover"
               />

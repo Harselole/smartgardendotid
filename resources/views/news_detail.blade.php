@@ -23,11 +23,6 @@
                                 <span class="rc kk wm">Kota: </span> {{ $berita->kota }}
                             </li>
                             @endif
-                            @if($berita->created_by)
-                            <li>
-                                <span class="rc kk wm">Oleh: </span> {{ $berita->created_by }}
-                            </li>
-                            @endif
                         </ul>
 
                         <!-- Deskripsi Berita (Bagian Pertama) -->
