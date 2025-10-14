@@ -24,6 +24,16 @@ class SmartgardenLabResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Lab';
 
+    public static function getPluralLabel(): ?string
+    {
+        return 'SmartGarden Labs';
+    }
+
+    public static function getLabel(): ?string
+    {
+        return 'SmartGarden Labs';
+    }
+
     public static function form(Schema $schema): Schema
     {
         return SmartgardenLabForm::configure($schema);

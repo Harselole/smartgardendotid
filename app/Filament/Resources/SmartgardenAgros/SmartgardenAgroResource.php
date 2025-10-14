@@ -24,6 +24,16 @@ class SmartgardenAgroResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Agro';
 
+    public static function getPluralLabel(): ?string
+    {
+        return 'SmartGarden Agro';
+    }
+
+    public static function getLabel(): ?string
+    {
+        return 'SmartGarden Agro';
+    }
+
     public static function form(Schema $schema): Schema
     {
         return SmartgardenAgroForm::configure($schema);

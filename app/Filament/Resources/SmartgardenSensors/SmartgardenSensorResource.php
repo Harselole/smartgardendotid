@@ -24,6 +24,16 @@ class SmartgardenSensorResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Sensor';
 
+    public static function getPluralLabel(): ?string
+    {
+        return 'SmartGarden Sensor';
+    }
+
+    public static function getLabel(): ?string
+    {
+        return 'SmartGarden Sensor';
+    }
+
     public static function form(Schema $schema): Schema
     {
         return SmartgardenSensorForm::configure($schema);

@@ -24,6 +24,16 @@ class SmartgardenAiResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Ai';
 
+    public static function getPluralLabel(): ?string
+    {
+        return 'SmartGarden AI';
+    }
+
+    public static function getLabel(): ?string
+    {
+        return 'SmartGarden AI';
+    }
+
     public static function form(Schema $schema): Schema
     {
         return SmartgardenAiForm::configure($schema);
