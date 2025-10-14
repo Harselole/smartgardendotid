@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class AdminPermission extends Model
 {
@@ -32,5 +33,18 @@ class AdminPermission extends Model
     public function scopeOrdered($query)
     {
         return $query->orderBy('order', 'asc');
+    }
+
+    /**
+     * Relasi dengan User
+     */
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            User::class,
+            'user_permissions',
+            'admin_permission_id',
+            'user_id'
+        )->withTimestamps();
     }
 }

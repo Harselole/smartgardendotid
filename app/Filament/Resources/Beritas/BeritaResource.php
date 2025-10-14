@@ -2,20 +2,22 @@
 
 namespace App\Filament\Resources\Beritas;
 
-use App\Filament\Resources\Beritas\Pages\CreateBerita;
+use BackedEnum;
+use App\Models\Berita;
+use Filament\Tables\Table;
+use Filament\Schemas\Schema;
+use Filament\Resources\Resource;
+use App\Traits\HasAdminPermission;
+use Filament\Support\Icons\Heroicon;
 use App\Filament\Resources\Beritas\Pages\EditBerita;
 use App\Filament\Resources\Beritas\Pages\ListBeritas;
+use App\Filament\Resources\Beritas\Pages\CreateBerita;
 use App\Filament\Resources\Beritas\Schemas\BeritaForm;
 use App\Filament\Resources\Beritas\Tables\BeritasTable;
-use App\Models\Berita;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 
 class BeritaResource extends Resource
 {
+    use HasAdminPermission;
     protected static ?string $model = Berita::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedNewspaper;

@@ -2,20 +2,22 @@
 
 namespace App\Filament\Resources\SmartgardenAgros;
 
-use App\Filament\Resources\SmartgardenAgros\Pages\CreateSmartgardenAgro;
+use BackedEnum;
+use Filament\Tables\Table;
+use Filament\Schemas\Schema;
+use App\Models\SmartgardenAgro;
+use Filament\Resources\Resource;
+use App\Traits\HasAdminPermission;
+use Filament\Support\Icons\Heroicon;
 use App\Filament\Resources\SmartgardenAgros\Pages\EditSmartgardenAgro;
 use App\Filament\Resources\SmartgardenAgros\Pages\ListSmartgardenAgros;
+use App\Filament\Resources\SmartgardenAgros\Pages\CreateSmartgardenAgro;
 use App\Filament\Resources\SmartgardenAgros\Schemas\SmartgardenAgroForm;
 use App\Filament\Resources\SmartgardenAgros\Tables\SmartgardenAgrosTable;
-use App\Models\SmartgardenAgro;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 
 class SmartgardenAgroResource extends Resource
 {
+    use HasAdminPermission;
     protected static ?string $model = SmartgardenAgro::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

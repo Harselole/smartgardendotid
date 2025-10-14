@@ -2,20 +2,22 @@
 
 namespace App\Filament\Resources\SmartgardenAis;
 
-use App\Filament\Resources\SmartgardenAis\Pages\CreateSmartgardenAi;
+use BackedEnum;
+use Filament\Tables\Table;
+use Filament\Schemas\Schema;
+use App\Models\SmartgardenAi;
+use Filament\Resources\Resource;
+use App\Traits\HasAdminPermission;
+use Filament\Support\Icons\Heroicon;
 use App\Filament\Resources\SmartgardenAis\Pages\EditSmartgardenAi;
 use App\Filament\Resources\SmartgardenAis\Pages\ListSmartgardenAis;
+use App\Filament\Resources\SmartgardenAis\Pages\CreateSmartgardenAi;
 use App\Filament\Resources\SmartgardenAis\Schemas\SmartgardenAiForm;
 use App\Filament\Resources\SmartgardenAis\Tables\SmartgardenAisTable;
-use App\Models\SmartgardenAi;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 
 class SmartgardenAiResource extends Resource
 {
+    use HasAdminPermission;
     protected static ?string $model = SmartgardenAi::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
