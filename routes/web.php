@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgroController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\BukuTamuController;
 use App\Http\Controllers\SmartgardenAiController;
 use App\Http\Controllers\SmartgardenLabController;
 use App\Http\Controllers\SmartgardenSensorController;
@@ -55,6 +56,8 @@ Route::get('/agro', [AgroController::class, 'index'])->name('agro.index');
 Route::get('/sensor', [SmartgardenSensorController::class, 'index'])->name('sensor.index');
 Route::get('/ai', [SmartgardenAiController::class, 'index'])->name('ai.index');
 Route::get('/labs', [SmartgardenLabController::class, 'index'])->name('labs.index');
+
+Route::post('/buku-tamu', [BukuTamuController::class, 'store'])->name('buku-tamu.store');
 
 // Route untuk testing (opsional, bisa dihapus di production)
 // Route::get('/newstest', function () {
