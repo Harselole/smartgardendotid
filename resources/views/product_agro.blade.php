@@ -1,5 +1,15 @@
 @include('layout.header')
 
+<!-- Alert Success -->
+@if(session('success'))
+<div id="successAlert" class="fixed top-20 right-6 z-50 bg-green-500 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 animate-slide-in">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+    </svg>
+    <span class="font-semibold">{{ session('success') }}</span>
+</div>
+@endif
+
 <!-- Hero Section -->
 <section class="relative pt-32 pb-20 bg-gradient-to-b from-green-50 to-white overflow-hidden">
     <div class="container mx-auto px-6 lg:px-8 max-w-7xl">
@@ -73,7 +83,7 @@
 
             <!-- Call to Action -->
             <div class="text-center mt-20">
-                <a href="/contact"
+                <button onclick="openModal()"
                     class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
                     Hubungi Kami
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -81,10 +91,13 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                </a>
+                </button>
             </div>
         @endif
     </div>
 </section>
+
+<!-- Include Modal Buku Tamu -->
+@include('components.modal-buku-tamu', ['produk' => 'Smartgarden Agro'])
 
 @include('layout.footer')
