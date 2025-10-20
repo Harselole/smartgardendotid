@@ -25,7 +25,7 @@
                             @endif
                         </ul>
 
-                        <!-- Deskripsi Berita (Bagian Pertama) -->
+                        <!-- Isi Berita (Bagian Pertama) -->
                         <div class="mt-6" style="text-align: justify">
                             {!! $berita->deskripsi !!}
                         </div>
