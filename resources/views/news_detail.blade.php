@@ -26,7 +26,7 @@
                         </ul>
 
                         <!-- Deskripsi Berita (Bagian Pertama) -->
-                        <div class="mt-6">
+                        <div class="mt-6" style="text-align: justify">
                             {!! $berita->deskripsi !!}
                         </div>
 

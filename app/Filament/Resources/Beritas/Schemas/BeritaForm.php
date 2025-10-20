@@ -29,9 +29,22 @@ class BeritaForm
                     ->dehydrated()
                     ->maxLength(255),
 
-                Forms\Components\Textarea::make('deskripsi')
-                    ->label('Deskripsi Berita')
-                    ->rows(5)
+                Forms\Components\RichEditor::make('deskripsi')
+                    ->label('Isi Berita')
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'bulletList',
+                        'orderedList',
+                        'blockquote',
+                        'link',
+                        'h2',
+                        'h3',
+                        'codeBlock',
+                    ])
+                    ->columnSpanFull()
                     ->required(),
 
                 Forms\Components\TextInput::make('kota')
